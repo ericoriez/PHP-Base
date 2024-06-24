@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php
+$title = 'Accueil';
+include 'header.php'; ?>
 
 <main>
   <div class="container mt-5">
