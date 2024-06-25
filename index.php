@@ -1,16 +1,28 @@
 <?php
-$title = 'Accueil';
-include 'header.php'; ?>
 
-<main>
-  <div class="container mt-5">
-    <h1>Bienvenue sur notre site e-commerce</h1>
-    <p>Explorez nos produits et profitez de nos offres spéciales.</p>
-    
-  
+// Vérification de l'existence du paramètre 'page' dans l'URL
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
 
-    <!-- Contenu principal de la page -->
-  </div>
-</main>
+    // Utilisation de switch case pour inclure les fichiers en fonction de 'page'
+    switch ($page) {
+        case 'home':
+            include('home.php');
+            break;
+        case 'produits':
+            include('produit.php');
+            break;
+            case 'contact':
+              include('contact.php');
+              break;
+        default:
+            // Si 'page' ne correspond à aucun cas connu, afficher une page d'erreur 
+           include('404.php');
+            break;
+    }
+} else {
+    // Si le paramètre 'page' n'est pas défini, inclure une page par défaut
+    include('home.php');
+}
 
-<?php include 'footer.php'; ?>
+?>
