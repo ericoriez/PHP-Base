@@ -12,7 +12,7 @@ if (isset($_GET['page'])) {
         case 'produits':
             include('produit.php');
             break;
-            case 'contact':
+        case 'contact':
               include('contact.php');
               break;
         default:

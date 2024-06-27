@@ -32,9 +32,8 @@ function verifierMessage($message)
     // Supprime les espaces en début et fin de chaîne et vérifie la longueur
     if (strlen(trim($message)) >= 5) { // Si la longueur du message, une fois les espaces enlevés, est de 5 ou plus
         return true; // Retourne vrai
-    } else {
-        return false; // Retourne faux
-    }
+    } 
+    return false; // Retourne faux
 }
 
 // Fonction pour vérifier si l'input email reçoit bien une valeur de type email
@@ -42,9 +41,9 @@ function verifierEmail($email)
 {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) { // Si l'email est valide selon FILTER_VALIDATE_EMAIL
         return true; // Retourne vrai
-    } else {
-        return false; // Retourne faux
     }
+    return false; // Retourne faux
+    
 }
 
 // Fonction pour vérifier si une raison est sélectionnée
